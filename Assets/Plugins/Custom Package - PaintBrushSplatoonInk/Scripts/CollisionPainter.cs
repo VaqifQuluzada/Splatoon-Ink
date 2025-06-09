@@ -7,6 +7,13 @@ public class CollisionPainter : MonoBehaviour{
     public float strength = 1;
     public float hardness = 1;
 
+	private void OnDrawGizmos()
+	{
+		Gizmos.color = Color.green;
+		Gizmos.DrawWireSphere(transform.position, radius);
+
+	}
+
     private void OnCollisionStay(Collision other) {
         Paintable p = other.collider.GetComponent<Paintable>();
         if(p != null){
